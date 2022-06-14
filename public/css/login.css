@@ -1,0 +1,323 @@
+:root {
+  /* --main-color: rgb(0 67 255); */
+  --main-color: #66cc66;
+
+  --inset-shadow: inset 8px 8px 8px rgba(203, 206, 209, 0.6),
+    inset -8px -8px 8px rgb(255, 255, 255);
+  --ouside-shadow: 0 0 0 3px rgb(103, 204, 102, 0.4);
+  --white-color: #ecf0fe;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  outline: none;
+  background-image: url(../images/bg-hero-desktop.svg);
+  background-size: cover;
+}
+@media (max-width: 767px) {
+  body {
+    background-image: url(../images/bg-hero-mobile.svg);
+  }
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+@media (max-width: 950px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left img {
+    display: none;
+  }
+  .right {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+  width: 600px;
+  align-items: flex-start;
+}
+.left img {
+  width: fit-content;
+}
+
+.right {
+  width: 350px;
+  height: 500px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-radius: 5px;
+  background-color: var(--white-color);
+}
+
+/*Start Form*/
+
+form {
+  height: 100%;
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+.fields {
+  width: 100%;
+}
+
+form h1 {
+  color: var(--main-color);
+  font-size: 50px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.fields .username,
+.fields .password {
+  transition: all 0.6s;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  box-shadow: var(--inset-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.username:hover,
+.password:hover {
+  box-shadow: var(--inset-shadow), var(--ouside-shadow);
+}
+.username:focus-within,
+.password:focus-within {
+  box-shadow: var(--inset-shadow), var(--ouside-shadow);
+  border: 1px solid var(--main-color);
+}
+
+.fields input {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 20px 10px 20px 5px;
+  background: none;
+  color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.fields i {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.fields i {
+  font-size: 16px;
+  font-weight: bold;
+  height: 22px;
+  margin: 0 10px -3px 25px;
+}
+select {
+  font-size: 18px;
+  color: black;
+  width: 100%;
+  padding: 20px 10px 20px 40px;
+  background: #ecf0fe;
+  border-radius: 20px;
+  border: 0;
+  outline: none;
+  box-shadow: inset 8px 8px 8px rgba(203, 206, 209, 0.6),
+    inset -8px -8px 8px rgb(255, 255, 255);
+  /* appearance: none; */
+}
+select optgroup {
+  color: rgba(0, 0, 0, 0.5);
+}
+.custom-select:hover {
+  box-shadow: var(--ouside-shadow);
+}
+.custom-select:focus-within {
+  border: 1px solid var(--main-color);
+  box-shadow: var(--ouside-shadow);
+}
+.select-perant label {
+  display: block;
+  padding-left: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.custom-select {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  transition: all 0.6s;
+  margin-top: 10px;
+  font-weight: 700;
+  color: Black;
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  display: block;
+  background: #ecf0fe;
+  height: 100%;
+  width: 20%;
+  pointer-events: none;
+  box-shadow: inset 0px 8px 8px rgba(203, 206, 209, 0.6),
+    inset -8px -8px 8px rgb(255, 255, 255);
+}
+
+.custom-arrow::before,
+.custom-arrow::after {
+  --size: 0.5em;
+
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.custom-arrow::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid black;
+  top: 44%;
+}
+.custom-arrow::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid black;
+  top: 60%;
+}
+
+/* Set a style for all buttons */
+.button_1 {
+  font-size: 20px;
+  color: var(--white-color);
+  padding: 15px 20px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  border-radius: 20px;
+  display: block;
+  text-decoration: none;
+  border: 1px solid var(--main-color);
+  margin-bottom: 30px;
+  background: none;
+  transition: 0.8s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0px 3px 10px 3px rgb(102 204 102 / 40%);
+}
+
+.button_1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: var(--main-color);
+  z-index: -1;
+  transition: 0.8s;
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+  height: 180%;
+}
+
+.button_1:hover::before,
+.button_1:active::before {
+  height: 0%;
+}
+.button_1:hover,
+.button_1:active {
+  color: var(--main-color);
+  box-shadow: none;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes animatezoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
